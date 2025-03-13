@@ -3,6 +3,19 @@ function sortear() {
     let de = obterValorDoInput('de');
     let ate = obterValorDoInput('ate');
 
+    if (de >= ate) {
+        alert('Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!');
+        document.getElementById('de').value = '';
+        document.getElementById('ate').value = '';
+        return;
+    }
+
+    if (quantidade > (ate - de + 1)) {
+        alert('A quantidade de números escolhidos no campo “Quantidade de números” é igual ou inferior ao intervalo de números entre os campos “Do número” e “Até o número”, verifique!');
+        document.getElementById('quantidade').value = '';
+        return;
+    }
+
     let sorteados = [];
     let numero;
 
